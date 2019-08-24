@@ -1,4 +1,4 @@
-package com.bchallenge;
+package com.challenge3;
 
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
