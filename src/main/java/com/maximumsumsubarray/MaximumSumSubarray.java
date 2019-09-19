@@ -11,16 +11,16 @@ public class MaximumSumSubarray
   private static int findMaxSumSubArray(int k, int[] arr)
   {
     int maxSum = 0;
-    for (int i = 0; i <= arr.length-k; i++)
+    int tempSum = 0;
+    int i = 0;
+    for (int j = 0; j < arr.length; j++)
     {
-      int tempSum = 0;
-      for (int j = i; j < i + k; j++)
+      tempSum += arr[j];
+      if (j >= k - 1)
       {
-        tempSum = tempSum + arr[j];
-      }
-      if (tempSum > maxSum)
-      {
-        maxSum = tempSum;
+        maxSum = Math.max(maxSum, tempSum);
+        tempSum -= arr[i];
+        i++;
       }
     }
     return maxSum;
